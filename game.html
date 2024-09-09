@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カードを引いて合計値を計算するゲーム</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>カードゲーム</h1>
+        <button id="draw-deck" onclick="drawCards()">山札を引く</button>
+        
+        	<h2>相手:</h2>
+            <div id="enemy-cards"></div>
+            <p><span id="enemytotal">0</span></p>
+        <div id="card-area">
+            <h2>自分:</h2>
+            <div id="drawn-cards"></div>
+        </div>
+
+
+        <div id="totals-area">
+            <p><span id="mytotal">0</span></p>
+            
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
