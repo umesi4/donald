@@ -1,6 +1,6 @@
 function redirectToNextPage() {
     setTimeout(function() {
-        window.location.href = "aho.html?number=" + randomNumber;
+        window.location.href = "game.html";
     }, 5000); // 5000ミリ秒 = 5秒
 }
 

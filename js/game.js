@@ -1,7 +1,7 @@
 let deckId;
 let mytotal = 0;
 let enemytotal = 0;
-
+let unkoNumber = 0;
 
 const deckApiUrl = "https://deckofcardsapi.com/api/deck";
 
@@ -12,6 +12,9 @@ window.onload = () => {
         .then(data => {
             deckId = data.deck_id;
         });
+        const randomNumber = localStorage.getItem('randomNumber');
+        document.getElementById('randomNumber').textContent = randomNumber;
+        unkoNumber = randomNumber; 
 };
 
 // 山札からカードを引く
@@ -60,28 +63,28 @@ function enemydrawCards() {
 // カードの値を数値に変換する
 function getmyCardValue(value) {
     if (value === 'ACE'){
-      if(mytotal+11 <= 21 ){
+      if(mytotal+11 <= unkoNumber ){
       return 11
       }
        return 1
       }
    
     if (value === 'JACK'){
-      if(mytotal+11 <= 21 ){
+      if(mytotal+11 <= unkoNumber ){
       return 11
       }
        return 1
       }
 
       if (value === 'QUEEN'){
-        if(mytotal+12 <= 21 ){
+        if(mytotal+12 <= unkoNumber ){
         return 12
         }
          return 2
         }
 
         if (value === 'KING'){
-          if(mytotal+13 <= 21 ){
+          if(mytotal+13 <= unkoNumber ){
           return 13
           }
            return 3
@@ -95,28 +98,28 @@ function getmyCardValue(value) {
 
 function getenemyCardValue(value) {
   if (value === 'ACE'){
-    if(enemytotal+11 <= 21 ){
+    if(enemytotal+11 <= unkoNumber ){
     return 11
     }
      return 1
     }
  
   if (value === 'JACK'){
-    if(enemytotal+11 <= 21 ){
+    if(enemytotal+11 <= unkoNumber ){
     return 11
     }
      return 1
     }
 
     if (value === 'QUEEN'){
-      if(enemytotal+12 <= 21 ){
+      if(enemytotal+12 <= unkoNumber ){
       return 12
       }
        return 2
       }
 
       if (value === 'KING'){
-        if(enemytotal+13 <= 21 ){
+        if(enemytotal+13 <= unkoNumber ){
         return 13
         }
          return 3
@@ -133,10 +136,10 @@ function updatemyTotals(value) {
     const cardValue = getmyCardValue(value);
           
             mytotal += cardValue;
-            if(mytotal <= 21){
+            if(mytotal <= unkoNumber){
               document.getElementById('mytotal').textContent = mytotal;
             }
-            if(mytotal >= 21){
+            if(mytotal >= unkoNumber){
               document.getElementById('mytotal').textContent = "BURST";
             }
 }
@@ -144,12 +147,11 @@ function updatemyTotals(value) {
 function updateenemyTotals(value) {
   const cardValue = getenemyCardValue(value);
     enemytotal += cardValue;      
-        if(enemytotal <= 21){
+        if(enemytotal <= unkoNumber){
           document.getElementById('enemytotal').textContent = enemytotal;
         }
-        if(enemytotal >= 21){
+        if(enemytotal >= unkoNumber){
           document.getElementById('enemytotal').textContent = "BURST";
-        }
-
+        }        
   
 }
