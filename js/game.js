@@ -19,6 +19,8 @@ window.onload = () => {
 
 // 山札からカードを引く
 function drawCards() {    
+
+  
     fetch(`${deckApiUrl}/${deckId}/draw/?count=1`)
         .then(response => response.json())
         .then(data => {
@@ -41,6 +43,7 @@ function drawCards() {
       } 
 
 function enemydrawCards() {  
+  
       fetch(`${deckApiUrl}/${deckId}/draw/?count=1`)
         .then(response => response.json())
         .then(data => {
@@ -57,7 +60,14 @@ function enemydrawCards() {
         
                 updateenemyTotals(card.value);
             });
-        });
+        }).then(() => {
+          const element = document.getElementById('enemy-cards');
+          const element2 = element.querySelectorAll('img');
+          for(let i = 0;  i < element2.length; i++){
+            console.log(element2[`${i}`]);
+          }
+        })
+        
 }
 
 // カードの値を数値に変換する
