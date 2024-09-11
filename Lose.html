@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Rezaltt.css">
+    <title>Blackjack - You Win!</title>
+</head>
+<body>
+
+<!-- 背景に浮遊するパーティクルエフェクト -->
+<div class="particle" style="--i:1;"></div>
+<div class="particle" style="--i:2;"></div>
+<div class="particle" style="--i:3;"></div>
+<div class="particle" style="--i:4;"></div>
+<div class="particle" style="--i:5;"></div>
+<div class="particle" style="--i:6;"></div>
+
+<div class="lose-screen">
+    <h1>YOU LOSE</h1>
+    <!-- スコアの表示部分 -->
+    <p>Your Score: <span id="your-score">0</span></p>
+    <p>CPU Score: <span id="cpu-score">0</span></p>
+    <div class="buttons">
+        <button class="replay" onclick="window.location.href='Randam.html';">Play Again</button>
+        <button class="exit" onclick="window.location.href='index.html';">Exit</button>
+    </div>
+</div>
+
+<script src="js/Rezalt.js"></script>
+
+</body>
+</html>
