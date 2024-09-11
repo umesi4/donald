@@ -13,9 +13,9 @@ body {
 .win-screen {
     text-align: center;
     padding: 50px;
-    background: rgba(0, 0, 0, 0.9); /* より暗い背景 */
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9); /* より暗い影 */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     animation: fadeIn 2s ease-in-out;
     color: #fff;
     position: relative;
@@ -25,7 +25,7 @@ body {
 .win-screen h1 {
     font-size: 64px;
     margin-bottom: 20px;
-    color: #d9534f; /* より暗い赤色 */
+    color: #f3ca20;
     text-shadow: 2px 2px 20px #000;
     animation: textGlow 1.5s ease-in-out infinite alternate;
 }
@@ -33,7 +33,7 @@ body {
 .win-screen p {
     font-size: 24px;
     margin-bottom: 30px;
-    color: #ccc; /* より暗いテキスト色 */
+    color: #fff;
 }
 
 .buttons {
