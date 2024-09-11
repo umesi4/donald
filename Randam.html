@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Randam</title>
-    <link rel="stylesheet" href="Randam.css">
+    <link rel="stylesheet" href="css/Randam.css">
 </head>
-<body onload="displayRandomNumber(); redirectToNextPage();">
-    <h1>ランダムな数字: <span id="randomNumber"></span></h1>
-    <p>5秒後に次のページへ移動します...</p>
+<body onload="startRoulette();">
+    <div id="photo">
+        <img src="photo/blackjack.png">
+    </div>
+    <div class="picture">
+        <img src="photo/human22.png">
+            <div class="text">
+                <h2><span id="randomNumber">--</span></h2>
+                <h2>今回はこの数以上でBURSTだよ！！</h2>
+            </div>
+    </div>
 </body>
 <script src="js/Randam.js"></script>
 </html>
