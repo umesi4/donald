@@ -6,7 +6,10 @@
         }
 
         body {
-            background-color: #2b7a06;
+            background-image: url('../photo/table.jpg'); /* 背景画像 */
+            background-size: cover; /* 背景画像を全体に合わせる */
+            background-position: center; /* 背景画像の位置を中央に */
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
