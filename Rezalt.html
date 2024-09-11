@@ -4,38 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Rezaltt.css">
+    <title>Blackjack - You Win!</title>
 </head>
 <body>
-    <!-- 背景 -->
-    <div class="background"></div>
 
-    <!-- リザルトオーバーレイ -->
-    <div class="result-overlay">
-        <div class="result-text" id="resultText">WIN</div>
-        <div class="card-display">
-            <img src="card1.png" alt="Player Card">
-            <img src="card2.png" alt="CPU Card">
-        </div>
-        <div class="buttons">
-            <button class="button next-button">NEXT</button>
-            <button class="button close-button" onclick="closeOverlay()">CLOSE</button>
-        </div>
+<!-- 背景に浮遊するパーティクルエフェクト -->
+<div class="particle" style="--i:1;"></div>
+<div class="particle" style="--i:2;"></div>
+<div class="particle" style="--i:3;"></div>
+<div class="particle" style="--i:4;"></div>
+<div class="particle" style="--i:5;"></div>
+<div class="particle" style="--i:6;"></div>
+
+<div class="win-screen">
+    <h1>YOU WIN!</h1>
+    <!-- スコアの表示部分 -->
+    <p>Your Score: <span id="your-score"></span></p>
+    <p>CPU Score: <span id="cpu-score"></span></p>
+    <div class="buttons">
+        <button class="replay" onclick="window.location.href='index.html';">Play Again</button>
+        <button class="exit" onclick="window.close();">Exit</button>
     </div>
+</div>
 
-    <script>
-        // 勝敗の状態を動的に変更する例
-        function showResult(result) {
-            const resultText = document.getElementById('resultText');
-            resultText.textContent = result; // "WIN" または "LOSE" をセット
-        }
+<script>
+    // ここでスコアを動的に設定できます
+    // document.getElementById('your-score').textContent = '21';  // 実際のスコアを設定
+    // document.getElementById('cpu-score').textContent = '19';   // 実際のCPUスコアを設定
+</script>
 
-        function closeOverlay() {
-            document.querySelector('.result-overlay').style.display = 'none';
-        }
-
-        // 勝利の場合は 'WIN' を表示、敗北の場合は 'LOSE' を表示
-        showResult('WIN'); // ここを 'LOSE' に変更すると負け画面が表示される
-        showResult('LOSE');
-    </script>
 </body>
 </html>
