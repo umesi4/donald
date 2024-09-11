@@ -1,0 +1,145 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #2b7a06;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Prevent scroll */
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 80%;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo img {
+            width: 650px;
+            margin-bottom: 50px;
+        }
+
+        .cards-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .card {
+            position: absolute;
+            width: 100px; /* Adjust card size */
+            height: auto;
+            animation: fall 4s linear infinite;
+        }
+
+        .card:nth-child(1) {
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .card:nth-child(2) {
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        .card:nth-child(3) {
+            left: 50%;
+            animation-delay: 2s;
+        }
+
+        .card:nth-child(4) {
+            left: 70%;
+            animation-delay: 3s;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -150px;
+                transform: rotate(0deg);
+            }
+            100% {
+                top: 100vh;
+                transform: rotate(360deg);
+            }
+        }
+ 
+        .start-button {
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 10px; /* Slightly rounded corners */
+            cursor: pointer;
+            width: 150px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            animation: bounceIn 2s ease forwards;
+            position: absolute;
+            bottom: 15px; /* Distance from the bottom */
+            left: 45%;
+            transform: translateX(-50%); /* Center horizontally */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+        }
+
+        .start-button:hover {
+            background-color: #000000;
+            transform: scale(1.05); /* Slight scaling on hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            80% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    

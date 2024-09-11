@@ -1,0 +1,60 @@
+   /* 背景 */
+        body {
+            margin: 0;
+            background-color: green;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            background-image: url('your-background-image.jpg'); /* 背景画像を指定 */
+            filter: blur(5px); /* 背景をぼかす */
+        }
+
+        /* リザルト画面 */
+        .result-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .result-text {
+            font-size: 48px;
+            color: gold;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .next-button {
+            background-color: blue;
+            color: white;
+        }
+
+        .close-button {
+            background-color: red;
+            color: white;
+        }
+    

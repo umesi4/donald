@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Rezaltt.css">
+</head>
+<body>
+    <!-- 背景 -->
+    <div class="background"></div>
+
+    <!-- リザルトオーバーレイ -->
+    <div class="result-overlay">
+        <div class="result-text" id="resultText">WIN</div>
+        <div class="card-display">
+            <img src="card1.png" alt="Player Card">
+            <img src="card2.png" alt="CPU Card">
+        </div>
+        <div class="buttons">
+            <button class="button next-button">NEXT</button>
+            <button class="button close-button" onclick="closeOverlay()">CLOSE</button>
+        </div>
+    </div>
+
+    <script>
+        // 勝敗の状態を動的に変更する例
+        function showResult(result) {
+            const resultText = document.getElementById('resultText');
+            resultText.textContent = result; // "WIN" または "LOSE" をセット
+        }
+
+        function closeOverlay() {
+            document.querySelector('.result-overlay').style.display = 'none';
+        }
+
+        // 勝利の場合は 'WIN' を表示、敗北の場合は 'LOSE' を表示
+        showResult('WIN'); // ここを 'LOSE' に変更すると負け画面が表示される
+        showResult('LOSE');
+    </script>
+</body>
+</html>
