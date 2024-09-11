@@ -71,7 +71,30 @@ function drawCards() {
        
       } 
 
-function stand() {  
+function stand() {
+
+  stand1();
+  if(unkoNumber-mytotal < unkoNumber-enemytotal && mytotal <= unkoNumber){
+    setTimeout(function() {
+      window.location.href = "Rezalt.html";
+  }, 3000);
+}else if(unkoNumber-mytotal > unkoNumber-enemytotal && enemytotal <= unkoNumber){
+  setTimeout(function() {
+    window.location.href = "Lose.html";
+}, 3000);
+}else if(mytotal==0){
+  setTimeout(function() {
+    window.location.href = "Lose.html";
+}, 3000);
+}else{
+setTimeout(function() {
+  window.location.href = "Drow.html";
+}, 3000);
+}
+
+}
+
+function stand1() {  
         
       fetch(`${deckApiUrl}/${deckId}/draw/?count=1`)
         .then(response => response.json())
@@ -105,10 +128,6 @@ function stand() {
           localStorage.setItem('myscore', mytotal);
         }
         
-        console.log(enemytotal);
-        setTimeout(function() {
-          window.location.href = "Rezalt.html";
-      }, 3000);
 }
 
 
@@ -225,7 +244,7 @@ function updateenemyTotals(value) {
     enemytotal += cardValue; 
     localStorage.setItem('enemyscore', enemytotal);     
         if(enemytotal < unkoNumber-4){
-          stand();
+          stand1();
           document.getElementById('enemytotal').textContent = enemytotal;
           }
         if(enemytotal >unkoNumber){
@@ -235,7 +254,7 @@ function updateenemyTotals(value) {
               enemytotal -= 10 ;
               document.getElementById('enemytotal').textContent = enemytotal;
               if(enemytotal < unkoNumber-4){
-              stand();
+              stand1();
               }
             }
           }
