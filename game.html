@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>カードを引いて合計値を計算するゲーム</title>
+    <title>ブラックジャック</title>
     <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
     <div class="container">
-        <h1>ブラックジャック</h1>
-        <h2>今回の数字</h2>
-        <p><span id="randomNumber">0</span></p>
-        <button id="draw-deck" onclick="drawCards()">ヒット</button>
-        <button id="stand" onclick="stand()">スタンド</button>
-        
-        	<h2>相手:</h2>
-            <div id="enemy-cards"></div>
-            <p><span id="enemytotal">0</span></p>
-        <div id="card-area">
-            <h2>自分:</h2>
-            <div id="drawn-cards"></div>
+        <div class="text">
+            <p><span id="randomNumber">0</span></p>
         </div>
-
-
-        <div id="totals-area">
-            <p><span id="mytotal">0</span></p>
-            
+        <div class="DL">
+            <p class="text1">DL:</p>
+            <p><span id="enemytotal" class="text1">0</span></p>
+            <div id="enemy-cards"></div>
+        </div>
+        <div class="player">
+            <div id="totals-area">
+                <p class="text1">YO:</p>
+                <p><span id="mytotal" class="text1">0</span></p>
+            </div>
+            <div id="card-area">
+                <div id="drawn-cards"></div>
+            </div>
+        </div>
+        <div class="button-container">
+            <div>
+                <button id="draw-deck" class="red-btn" onclick="drawCards()">HIT</button>
+            </div>
+            <div>
+                
+                <button id="stand" class="blue-btn" onclick="stand()">STAND</button>
+            </div>
         </div>
     </div>
 

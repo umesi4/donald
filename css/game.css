@@ -1,34 +1,56 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('../photo/table.jpg'); /* 背景画像 */
+    background-size: cover; /* 背景画像を全体に合わせる */
+    background-position: center; /* 背景画像の位置を中央に */
+    background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+    height: 100vh; /* ビューポートの高さに合わせる */
+    width: 100vw; /* ビューポートの幅に合わせる */
+}
+
+.red-btn {
+    background-image: url('../photo/redcoin.png'); /* 画像のURL */
+    background-size: cover; /* ボタン全体に画像を広げる */
+    background-position: center; /* 画像の位置を中央にする */
+    width: 120px; /* ボタンの幅 */
+    height: 120px; /* ボタンの高さ */
+    border-radius: 50%; /* ボタンを丸くする */
+    border: none; /* ボタンの枠線をなくす */
+    color: white; /* テキストの色 */
+    font-size: 16px; /* テキストのサイズ */
+    font-weight: bold;
+    cursor: pointer; /* ホバー時にカーソルが変わる */
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    justify-content: center;
+    margin: right 40px;
 }
 
-.container {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.red-btn:hover{
+    color: red;
 }
 
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #008CBA;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.blue-btn {
+    background-image: url('../photo/bluecoin.png'); /* 画像のURL */
+    background-size: cover; /* ボタン全体に画像を広げる */
+    background-position: center; /* 画像の位置を中央にする */
+    width: 120px; /* ボタンの幅 */
+    height: 120px; /* ボタンの高さ */
+    border-radius: 50%; /* ボタンを丸くする */
+    border: none; /* ボタンの枠線をなくす */
+    color: white; /* テキストの色 */
+    font-weight: bold;
+    font-size: 16px; /* テキストのサイズ */
+    cursor: pointer; /* ホバー時にカーソルが変わる */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
 }
 
-button:hover {
-    background-color: #005f73;
+.blue-btn:hover{
+    color: blue;
 }
 
 #drawn-cards img, #enemy-cards img {
@@ -37,11 +59,59 @@ button:hover {
     cursor: pointer;
 }
 
-h2 {
-    font-size: 20px;
-    margin-top: 20px;
+#totals-area {
+    margin-top: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* 中央に配置 */
+    gap: 20px; /* ボタン同士の間隔 */
+    margin-top: 50px; /* 上からの余白 */
+}
+
+.text{
+    font-family: 'Georgia', serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    margin-left:50px;
+}
+
+.text1{
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    margin-left: 80px;
+    margin-top: 50px;
+}
+
+
+.DL {
+    display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+    gap: 10px; /* 要素間の余白 */
+}
+
+.player {
+    display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+    gap: 20px; /* 要素間のスペース */
 }
 
 #totals-area {
-    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#card-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
