@@ -72,7 +72,6 @@ function drawCards() {
       } 
 
 function stand() {  
-  console.log("stand");
         
       fetch(`${deckApiUrl}/${deckId}/draw/?count=1`)
         .then(response => response.json())
@@ -96,12 +95,17 @@ function stand() {
                   }
                 if(enemytotal > unkoNumber){
                   document.getElementById('enemytotal').textContent = "BURST";
+                  localStorage.setItem('enemyscore', "BURST");
                 }
             });
         })
-        localStorage.setItem('myscore', mytotal);
-        localStorage.setItem('enemyscore', enemytotal);
-
+        if(mytotal > unkoNumber){
+          localStorage.setItem('myscore', "BURST");
+        }else{
+          localStorage.setItem('myscore', mytotal);
+        }
+        
+        console.log(enemytotal);
         setTimeout(function() {
           window.location.href = "Rezalt.html";
       }, 3000);
@@ -218,8 +222,8 @@ function updatemyTotals(value) {
 function updateenemyTotals(value) {
   const cardValue = getenemyCardValue(value);
   
-    enemytotal += cardValue;      
-    console.log(enemytotal); 
+    enemytotal += cardValue; 
+    localStorage.setItem('enemyscore', enemytotal);     
         if(enemytotal < unkoNumber-4){
           stand();
           document.getElementById('enemytotal').textContent = enemytotal;
@@ -232,7 +236,6 @@ function updateenemyTotals(value) {
               document.getElementById('enemytotal').textContent = enemytotal;
               if(enemytotal < unkoNumber-4){
               stand();
-              console.log("s");
               }
             }
           }
