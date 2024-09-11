@@ -1,0 +1,42 @@
+body {
+    background-image: url('../photo/table.jpg'); /* 背景画像 */
+    background-size: cover; /* 背景画像を全体に合わせる */
+    background-position: center; /* 背景画像の位置を中央に */
+    background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+    height: 100vh; /* ビューポートの高さに合わせる */
+    width: 100vw; /* ビューポートの幅に合わせる */
+}
+
+#photo img{
+    text-align: center;
+    width: 650px;
+    height: 300px;
+    margin-left: 350px;
+}
+
+.picture {
+    display: flex;
+    align-items: center; /* 縦方向に中央揃え */
+    margin-top: -50px;
+}
+
+.picture img{
+    width: 700px; 
+    height: 300px;
+    margin-right: 20px;
+}
+
+.text{
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFD700; /* ゴールドカラー */
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #FF0000, 6px 6px 0 #0000FF; /* 影を重ねて立体感を出す */
+    text-align: center;
+}
+
+.text h2 {
+    margin: 0; /* h1のデフォルトのマージンをリセット */
+}
