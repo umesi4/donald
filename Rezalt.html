@@ -19,19 +19,15 @@
 <div class="win-screen">
     <h1>YOU WIN!</h1>
     <!-- スコアの表示部分 -->
-    <p>Your Score: <span id="your-score"></span></p>
-    <p>CPU Score: <span id="cpu-score"></span></p>
+    <p>Your Score: <span id="your-score">0</span></p>
+    <p>CPU Score: <span id="cpu-score">0</span></p>
     <div class="buttons">
-        <button class="replay" onclick="window.location.href='index.html';">Play Again</button>
-        <button class="exit" onclick="window.close();">Exit</button>
+        <button class="replay" onclick="window.location.href='Randam.html';">Play Again</button>
+        <button class="exit" onclick="window.location.href='index.html';">Exit</button>
     </div>
 </div>
 
-<script>
-    // ここでスコアを動的に設定できます
-    // document.getElementById('your-score').textContent = '21';  // 実際のスコアを設定
-    // document.getElementById('cpu-score').textContent = '19';   // 実際のCPUスコアを設定
-</script>
+<script src="js/Rezalt.js"></script>
 
 </body>
 </html>

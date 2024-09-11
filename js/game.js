@@ -72,7 +72,7 @@ function drawCards() {
       } 
 
 function stand() {  
-   
+  console.log("stand");
         
       fetch(`${deckApiUrl}/${deckId}/draw/?count=1`)
         .then(response => response.json())
@@ -89,14 +89,22 @@ function stand() {
                 enemyCardsDiv.appendChild(cardImg);
         
                 updateenemyTotals(card.value);
+                
+                
                 if(enemytotal <= unkoNumber){
-                document.getElementById('enemytotal').textContent = enemytotal;
-                }
+                  document.getElementById('enemytotal').textContent = enemytotal;
+                  }
                 if(enemytotal > unkoNumber){
                   document.getElementById('enemytotal').textContent = "BURST";
                 }
             });
         })
+        localStorage.setItem('myscore', mytotal);
+        localStorage.setItem('enemyscore', enemytotal);
+
+        setTimeout(function() {
+          window.location.href = "Rezalt.html";
+      }, 3000);
 }
 
 
@@ -211,26 +219,24 @@ function updateenemyTotals(value) {
   const cardValue = getenemyCardValue(value);
   
     enemytotal += cardValue;      
-        
-        if(enemytotal <= unkoNumber-4){
+    console.log(enemytotal); 
+        if(enemytotal < unkoNumber-4){
           stand();
           document.getElementById('enemytotal').textContent = enemytotal;
           }
         if(enemytotal >unkoNumber){
-          for(let i = 0;i < a.length;i++){
+          for(let i = 0;i < b.length;i++){
             if(b[`${i}`] == 11 || b[`${i}`] == 12 || b[`${i}`] == 13){
               b[`${i}`] -= 10;
               enemytotal -= 10 ;
               document.getElementById('enemytotal').textContent = enemytotal;
+              if(enemytotal < unkoNumber-4){
               stand();
+              console.log("s");
+              }
             }
           }
-          if(enemytotal <= unkoNumber){
-            document.getElementById('enemytotal').textContent = enemytotal;
-          }
-          if(enemytotal > unkoNumber){
-            document.getElementById('enemytotal').textContent = "BURST";
-          }
+          
         }        
   
 }

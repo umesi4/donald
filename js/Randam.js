@@ -29,5 +29,5 @@ function stopRoulette() {
     // 5秒後に次のページにリダイレクト
     setTimeout(() => {
         window.location.href = "game.html";
-    }, 5000);
+    }, 2500);
 }
