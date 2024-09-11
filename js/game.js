@@ -73,12 +73,27 @@ function drawCards() {
 
 function stand() {
 
+  if(mytotal > unkoNumber){
+    localStorage.setItem('myscore', "BURST");
+    localStorage.setItem('enemyscore', enemytotal);
+  }
+
+  if(enemytotal < unkoNumber-4 && mytotal <= unkoNumber){
   stand1();
+  }
   if(unkoNumber-mytotal < unkoNumber-enemytotal && mytotal <= unkoNumber){
     setTimeout(function() {
       window.location.href = "Rezalt.html";
   }, 3000);
+}else if(mytotal <= unkoNumber && enemytotal > unkoNumber){
+  setTimeout(function() {
+    window.location.href = "Rezalt.html";
+}, 3000);
 }else if(unkoNumber-mytotal > unkoNumber-enemytotal && enemytotal <= unkoNumber){
+  setTimeout(function() {
+    window.location.href = "Lose.html";
+}, 3000);
+}else if(enemytotal <= unkoNumber && mytotal > unkoNumber){
   setTimeout(function() {
     window.location.href = "Lose.html";
 }, 3000);
@@ -87,9 +102,9 @@ function stand() {
     window.location.href = "Lose.html";
 }, 3000);
 }else{
-setTimeout(function() {
-  window.location.href = "Drow.html";
-}, 3000);
+  setTimeout(function() {
+    window.location.href = "Drow.html";
+  }, 3000);
 }
 
 }
