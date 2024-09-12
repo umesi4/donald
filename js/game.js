@@ -89,7 +89,7 @@ async function stand() {
 
   await sleep(3000);
   
-  if (mytotal > enemytotal) {
+  if (mytotal > enemytotal && mytotal <= burstNumber) {
     console.log(1);
     window.location.href = "Rezalt.html";
   } else if (enemytotal > burstNumber) {
@@ -100,7 +100,7 @@ async function stand() {
     console.log(3);
       window.location.href = "Drow.html";
     
-  } else if (mytotal < enemytotal || mytotal == 0) {
+  } else if (mytotal < enemytotal || mytotal == 0 || mytotal > burstNumber) {
     console.log(4);
       window.location.href = "Lose.html";
     
