@@ -100,7 +100,7 @@ async function stand() {
     console.log(3);
       window.location.href = "Drow.html";
     
-  } else if (mytotal < enemytotal || mytotal == 0 || mytotal > burstNumber) {
+  } else if (mytotal < enemytotal || mytotal > burstNumber) {
     console.log(4);
       window.location.href = "Lose.html";
     
